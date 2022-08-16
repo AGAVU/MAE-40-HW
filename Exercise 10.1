@@ -1,0 +1,17 @@
+syms C1 C2 C3 C4 C5 Ca Cb Cc
+eqn1 = Ca+Cb == C3(C1+C2)/(C1+C2+C3);
+eqn2 = Ca+Cc == C2(C1+C3)/(C1+C2+C3);
+eqn3 = Cb+Cc == C1(C2+C3)/(C1+C2+C3);
+
+A = solve(eqn1,eqn2,eqn3,Ca,Cb,Cc);
+B = solve(eqn1,eqn2,eqn3,C1,C2,C3);
+
+Ca = simplify(A.Ca);
+Cb = simplify(A.Cb);
+Cc = simplify(A.Cc);
+
+simplify(Ca+1/(1/(Cb+C4)+1/(Cc+C5)))
+
+C1 = simplify(B.C1);
+C2 = simplify(B.C2);
+C3 = simplify(B.C3);
