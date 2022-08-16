@@ -1,0 +1,23 @@
+figure(1);
+bode(tf(1,[1 1]));
+%Strictly proper
+
+figure(2);
+bode(tf([1 -1],1));
+%Improper
+
+figure(3);
+bode(tf([1 -1],[1 1]));
+%Semi-proper
+
+figure(4);
+bode(tf([1 101 100],[1 0]));
+%Improper
+
+figure(5);
+bode(tf([1 0],[1 101 100]));
+%Strictly proper
+
+figure(6);
+bode(tf(1,[1 1 1]));
+%Strictly proper
